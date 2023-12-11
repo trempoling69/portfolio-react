@@ -1,0 +1,22 @@
+.title-section_container {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title-section_name {
+  position: sticky;
+  top: 40%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 6rem;
+  text-shadow: 0 1px 0 #666, 0 2px 0 #555, 0 3px 0 #444, 0 4px 0 #333, 0 5px 0 #222, 0 6px 0 #111, 0 7px 5px #000;
+}
+
+.moon-svg {
+  position: sticky;
+  width: 30vw;
+  bottom: -25%;
+  transform: translateX(-25%);
+}
