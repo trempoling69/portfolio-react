@@ -1,18 +1,46 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import './index.scss';
 
 const Subtitle = ({ text }: { text: string }) => {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: targetRef, offset: ['start center', 'end center'] });
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
-
+  const container = {
+    hidden: {
+      y: 2,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delayChildren: 1.5,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+  const defaultAnimation = {
+    hidden: {
+      opacity: 0,
+      y: 3,
+      x: 3,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+    },
+  };
   return (
-    <div className="container" ref={targetRef}>
-      <motion.span className="title-section_subtitle" style={{ opacity }}>
-        {text}
+    <motion.span className="title-section_subtitle" key={text}>
+      <span className="sr-only">{text}</span>
+      <motion.span aria-hidden initial="hidden" animate="visible" exit="hidden" variants={container}>
+        {text.split('').map((letter, index) => (
+          <motion.span variants={defaultAnimation} key={index} style={{ display: 'inline-block' }}>
+            {letter === ' ' ? '\u00A0' : letter}
+          </motion.span>
+        ))}
       </motion.span>
-    </div>
+    </motion.span>
   );
 };
 

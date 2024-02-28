@@ -23,7 +23,6 @@ $numComet: 10;
 }
 
 @mixin star-template($numStars, $starSize, $scrollSpeed) {
-  z-index: 10;
   width: $starSize;
   height: $starSize;
   border-radius: 50%;
@@ -44,7 +43,6 @@ $numComet: 10;
 
 @mixin shooting-star-template($numStars, $starSize, $speed) {
   opacity: 0;
-  z-index: 10;
   width: $starSize;
   height: $starSize + 80px;
   border-top-left-radius: 50%;
@@ -57,7 +55,10 @@ $numComet: 10;
 }
 
 .sky {
-  position: relative;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
 }
 .stars {
   @include star-template($numStarOneStars, 1px, $starOneScrollDuration);
@@ -90,12 +91,16 @@ $numComet: 10;
 }
 
 @keyframes animShootingStar {
-  from {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  2% {
     transform: translateY(0px) translateX(0px) rotate(-45deg);
     opacity: 1;
     height: 5px;
   }
-  to {
+  100% {
     transform: translateY(-#{$starFieldHeight}px) translateX(-#{$starFieldWidth}px) rotate(-45deg);
     opacity: 1;
     height: 800px;

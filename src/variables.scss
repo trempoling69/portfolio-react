@@ -1,0 +1,22 @@
+$sombre: #22223b;
+$moinssombre: #4a4e69;
+$middle: #9a8c98;
+$clair: #c9ada7;
+$plusclair: #f2e9e4;
+
+$breakpoints: (
+  'phone-down': 500px,
+  'tablet-up': 768px,
+  'tablet-down': 900px,
+  'desktop-up': 1024px,
+  'desktop-down': 1280px,
+  'widescreen-up': 1440px,
+);
+
+@mixin media-max($_key) {
+  @media screen and (max-width: map-get($breakpoints, $_key)) {
+    & {
+      @content;
+    }
+  }
+}

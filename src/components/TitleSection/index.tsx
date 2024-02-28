@@ -1,38 +1,41 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import StarBackground from '../StarBackground';
+import { AnimatePresence } from 'framer-motion';
 import './index.scss';
 import Subtitle from './Subtitle';
-// import Moon from './Moon';
-import { useRef } from 'react';
-// import Moon from './Moon';
+import { forwardRef, useEffect, useState } from 'react';
+import Moon from './Moon';
 
-const TitleSection = () => {
-  const targetRef = useRef(null);
-  const subtitleArray = ['Développeur web junior', 'Etudiant', 'Passionné', ''];
-  const { scrollYProgress } = useScroll({ target: targetRef, offset: ['end end', 'end start'] });
-  // const scale = useTransform(scrollYProgress, [0, 0.75, 0.95], [1, 1.2, 0.01]);
-  // const y = useTransform(scrollYProgress, [0, 0.75, 0.9], ['0%', '150%', '950%']);
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-400%']);
+const TitleSection = forwardRef<HTMLDivElement, object>((_, ref) => {
+  const [currentSub, setCurrentSub] = useState(0);
+  const subtitleArray = ['Développeur web junior', 'Etudiant', 'Passionné'];
+  const maxValue = subtitleArray.length;
+  const intervalInSeconds = 6;
+  useEffect(() => {
+    const incrementCurrentSub = () => {
+      setCurrentSub((prevSub) => (prevSub + 1) % (maxValue + 1));
+    };
+
+    const intervalId = setInterval(incrementCurrentSub, intervalInSeconds * 1000);
+
+    if (currentSub === maxValue) {
+      setCurrentSub(0);
+    }
+
+    return () => clearInterval(intervalId);
+  }, [currentSub, maxValue, intervalInSeconds]);
 
   return (
-    <StarBackground>
-      <motion.section
-        className="title-section_container"
-        initial={{ transform: 'translateY(-15px)' }}
-        animate={{ transform: 'translateY(15px)' }}
-        transition={{ repeat: Infinity, repeatType: 'mirror', duration: 4, ease: 'easeInOut' }}
-        ref={targetRef}
-      >
-        <motion.span className="title-section_name" style={{ x }}>
-          Romain Mourieras
-        </motion.span>
-        {subtitleArray.map((sub, index) => (
-          <Subtitle text={sub} key={index} />
-        ))}
-      </motion.section>
-      {/* <Moon targetRef={targetRef} /> */}
-    </StarBackground>
+    <>
+      <section className="title-section_container" ref={ref} id="title-section">
+        <div className="title-text_container">
+          <span className="title-section_name">Romain Mourieras</span>
+          <AnimatePresence>
+            {subtitleArray.map((sub, index) => index === currentSub && <Subtitle key={index} text={sub} />)}
+          </AnimatePresence>
+        </div>
+        <Moon />
+      </section>
+    </>
   );
-};
+});
 
 export default TitleSection;

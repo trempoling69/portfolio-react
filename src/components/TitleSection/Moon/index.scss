@@ -1,6 +1,9 @@
 .moon-svg {
-  position: sticky;
-  width: 30vw;
+  position: absolute;
+  width: max(25vw, 600px);
   bottom: -20%;
-  transform: translateX(150%);
+  left: 80%;
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 }

@@ -1,0 +1,19 @@
+.project-section_container {
+  padding: 6rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  @media screen and (max-width: 1024px) {
+    padding: 1rem;
+  }
+}
+
+.project-section_title {
+  font-size: min(12vw, 7rem);
+  color: #c9ada7;
+  font-weight: 600;
+  @media screen and (max-width: 1024px) {
+    font-weight: 200;
+  }
+}
