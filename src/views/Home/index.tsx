@@ -22,7 +22,6 @@ const Home = () => {
     const getClientWidth = () => {
       const screenWidth = window.innerWidth || 0;
       setIsDesktop(screenWidth > 1024);
-      console.log(screenWidth);
     };
     getClientWidth();
     window.addEventListener('resize', getClientWidth);

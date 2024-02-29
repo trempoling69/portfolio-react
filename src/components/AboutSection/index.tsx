@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 import './index.scss';
 import CV from '../../Data/Romain-Mourieras_CV.pdf';
+import picture from '../../assets/pp_rm_recad.png';
 const AboutSection = forwardRef<HTMLElement, object>((_, ref) => {
   return (
     <section className="about-section_container" ref={ref} id="about-section">
@@ -48,7 +49,7 @@ const AboutSection = forwardRef<HTMLElement, object>((_, ref) => {
             </div>
           </div>
         </div>
-        <img src="https://romain-mourieras.fr/assets/img/pp_rm.jpg" alt="" className="picture-profil" />
+        <img src={picture} alt="" className="picture-profil" />
       </div>
     </section>
   );
