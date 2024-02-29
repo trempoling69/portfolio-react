@@ -1,19 +1,32 @@
+@import '../../variables.scss';
+
 .project-section_container {
   padding: 6rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  overflow: hidden;
   @media screen and (max-width: 1024px) {
     padding: 1rem;
   }
 }
 
 .project-section_title {
-  font-size: min(12vw, 7rem);
-  color: #c9ada7;
+  font-size: min(10vw, 7rem);
+  color: $clair;
   font-weight: 600;
-  @media screen and (max-width: 1024px) {
-    font-weight: 200;
+}
+
+.project-section_subtitle {
+  font-size: min(8vw, 2rem);
+}
+
+.projects {
+  display: flex;
+  gap: 3rem;
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
   }
 }

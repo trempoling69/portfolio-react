@@ -1,0 +1,110 @@
+@import '../../../variables.scss';
+.project-card_container {
+  pointer-events: inherit;
+  min-width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 16px;
+  color: $clair;
+  @include media-max('desktop-up') {
+    flex-direction: column;
+    min-width: 100%;
+  }
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background: rgba($moinssombre, 0.15);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(1px);
+    border: 1px solid rgba($moinssombre, 0.57);
+  }
+  .project-image {
+    display: flex;
+    justify-content: space-around;
+    height: fit-content;
+    min-width: 35%;
+    @include media-max('desktop-up') {
+      width: 20%;
+    }
+    img {
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+  .project-description_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    gap: 3.5rem;
+    @include media-max('desktop-up') {
+      gap: 0;
+    }
+    .project-company {
+      font-weight: 700;
+      font-size: min(8vw, 3.5rem);
+    }
+    .project-name {
+      font-weight: 600;
+      font-size: 2rem;
+      font-style: italic;
+    }
+    .project-part_container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      @include media-max('desktop-up') {
+        gap: 0.5rem;
+      }
+      .project-title_part {
+        font-weight: 600;
+        font-size: 2.5rem;
+      }
+      .project-text_part {
+        font-size: 2rem;
+      }
+      .technology-list {
+        display: flex;
+        justify-content: space-around;
+        .technology_logo-container {
+          position: relative;
+          display: inline-block;
+          text-align: center;
+          &:hover {
+            .tooltip-text {
+              visibility: visible;
+            }
+          }
+          img {
+            pointer-events: none;
+          }
+          .tooltip-text {
+            visibility: hidden;
+            position: absolute;
+            z-index: 1;
+            min-width: 100%;
+            color: white;
+            font-weight: 700;
+            font-size: 2rem;
+            background-color: $clair;
+            border-radius: 10px;
+            padding: 10px 15px 10px 15px;
+            top: 100%;
+            right: -50%;
+            &::after {
+              content: ' ';
+              position: absolute;
+              bottom: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: transparent transparent $clair transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}

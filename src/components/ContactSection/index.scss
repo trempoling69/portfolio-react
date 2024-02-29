@@ -11,12 +11,9 @@
 }
 
 .contact-section_title {
-  font-size: min(12vw, 7rem);
-  color: #c9ada7;
+  font-size: min(10vw, 7rem);
+  color: $clair;
   font-weight: 600;
-  @media screen and (max-width: 1024px) {
-    font-weight: 200;
-  }
 }
 .contact-section_container {
   @include media-max('desktop-up') {
@@ -46,7 +43,6 @@
       text-decoration: none;
       background-color: $plusclair;
       width: 18vw;
-      //margin-right: 5vw;
       height: 35vh;
       border-radius: 15%;
       display: flex;
@@ -55,12 +51,16 @@
       align-items: center;
       justify-content: space-evenly;
       @include media-max('desktop-up') {
-        width: 40%;
-        height: 20vh;
+        width: 35%;
+        height: 25vh;
         margin-bottom: 4vh;
         img {
           width: 30%;
         }
+      }
+      @include media-max('tablet-up') {
+        width: 40%;
+        height: 20vh;
       }
       &:hover {
         background-color: $clair;

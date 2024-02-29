@@ -4,11 +4,12 @@ import AboutSection from '../../components/AboutSection';
 import './index.scss';
 import Navbar from '../../components/Navbar';
 import { AnimatePresence, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ProjectSection from '../../components/ProjectSection';
 import ContactSection from '../../components/ContactSection';
 
 const Home = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
   const titleSectionRef = useRef(null);
   const aboutSectionRef = useRef(null);
   const projectSectionRef = useRef(null);
@@ -17,8 +18,19 @@ const Home = () => {
   const isAboutSectionInView = useInView(aboutSectionRef, { amount: 0.45 });
   const isProjectSectionInView = useInView(projectSectionRef, { amount: 0.55 });
   const isContactSectionInView = useInView(contactSectionRef, { amount: 0.45 });
-
-  const isNavbarDisplay = isAboutSectionInView || isProjectSectionInView || isContactSectionInView;
+  useEffect(() => {
+    const getClientWidth = () => {
+      const screenWidth = window.innerWidth || 0;
+      setIsDesktop(screenWidth > 1024);
+      console.log(screenWidth);
+    };
+    getClientWidth();
+    window.addEventListener('resize', getClientWidth);
+    return () => {
+      window.removeEventListener('resize', getClientWidth);
+    };
+  }, []);
+  const isNavbarDisplay = isDesktop && (isAboutSectionInView || isProjectSectionInView || isContactSectionInView);
 
   return (
     <div className="home-main_container">

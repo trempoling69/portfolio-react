@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+@import './button.scss';
 .about-section_container {
   padding: 6rem;
   min-height: 100vh;
@@ -9,12 +11,9 @@
   }
 }
 .about-section_title {
-  font-size: min(12vw, 7rem);
-  color: #c9ada7;
+  font-size: min(10vw, 7rem);
+  color: $clair;
   font-weight: 600;
-  @media screen and (max-width: 1024px) {
-    font-weight: 200;
-  }
 }
 .about-section_content {
   display: flex;
@@ -46,10 +45,16 @@
   @media screen and (max-width: 1024px) {
     width: 100%;
   }
+  .link-instagram {
+    color: $clair;
+    &:hover {
+      color: $plusclair;
+    }
+  }
 }
 
 .picture-profil {
   z-index: 9999;
-  width: max(25vw, 500px);
+  width: max(25vw, 350px);
   border-radius: 9999px;
 }

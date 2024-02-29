@@ -1,18 +1,53 @@
 type Projects = Project[];
-type Project = {
+export type Project = {
   name: string;
   company: string;
-  technology: string[];
+  image: string;
+  technologies: Technology[];
   productDesciption: string;
   roleDescription: string;
   ability: string;
 };
-
+type Technology = {
+  name: string;
+  image: string;
+};
+import akanemaLogo from './img/akanema.png';
+import rougyLogo from './img/rougy-logo.png';
+import reactJsLogo from './img/reactjs.svg';
+import tailwindLogo from './img/tailwind.svg';
+import directusLogo from './img/directus.svg';
+import sentryLogo from './img/sentry.svg';
+import youSignLogo from './img/yousign.svg';
+import reduxLogo from './img/redux.svg';
+import laravelLogo from './img/laravel.svg';
+import typescriptLogo from './img/typescript.svg';
+import scssLogo from './img/scss.svg';
+import nestjsLogo from './img/nestjs.svg';
+import dockerLogo from './img/docker.svg';
+import nginxLogo from './img/nginx.png';
+import mysqlLogo from './img/mysql.svg';
+import reactnativeLogo from './img/reactnative.svg';
+import expoLogo from './img/expo.svg';
+import nodejsLogo from './img/nodejs.svg';
+import phpLogo from './img/php.svg';
+import vuejsLogo from './img/vuejs.svg';
+import persoLogo from './img/perso.png';
+import githubLogo from './img/github.svg';
+import gitlabLogo from './img/gitlab.svg';
 export const projects: Projects = [
   {
     name: 'Clique',
-    company: 'Akenema',
-    technology: ['ReactJS', 'Tailwind Css', 'Directus', 'Sentry', 'Yousign'],
+    company: 'Akanema',
+    image: akanemaLogo,
+    technologies: [
+      { name: 'ReactJS', image: reactJsLogo },
+      { name: 'Tailwind Css', image: tailwindLogo },
+      { name: 'Directus', image: directusLogo },
+      { name: 'Sentry', image: sentryLogo },
+      { name: 'Yousign', image: youSignLogo },
+      { name: 'GitHub', image: githubLogo },
+    ],
     productDesciption:
       "Clique est une plateforme développée par AKANEMA qui permet de regrouper l'ensemble des associations d'élève au sein d'une école. Elle offre la possibilité aux établissements de définir un processus de création d'association qui leur permet de regrouper l'ensemble des documents et démarches au même endroit.",
     roleDescription:
@@ -22,10 +57,18 @@ export const projects: Projects = [
   },
   {
     name: 'Magneto',
-    company: 'Akenama',
-    technology: ['ReactJS', 'Tailwind Css', 'Redux', 'Laravel', 'TypeScript'],
+    company: 'Akanama',
+    image: akanemaLogo,
+    technologies: [
+      { name: 'ReactJS', image: reactJsLogo },
+      { name: 'Tailwind Css', image: tailwindLogo },
+      { name: 'Redux', image: reduxLogo },
+      { name: 'Laravel', image: laravelLogo },
+      { name: 'TypeScript', image: typescriptLogo },
+      { name: 'GitLab', image: gitlabLogo },
+    ],
     productDesciption:
-      "Mangeto est le deuxième outil développé par Akanema qui permet, à l'aide d'un questionnaire, de mettre en avant les compétences extra-professionnelle d'un candidat dans une campagne de recrutement",
+      "Magneto est le deuxième outil développé par Akanema qui permet, à l'aide d'un questionnaire, de mettre en avant les compétences extra-professionnelle d'un candidat dans une campagne de recrutement",
     roleDescription:
       "J'ai commencé ce projet au début de mon alternance, j'ai d'abord été chargé du développement de l'application côté frontend en travaillant en collaboration avec un autre développeur qui été lui sur le backend. J'ai développé l'application en suivant les directives et les maquettes figma de la cheffe de projet. Je suis ensuite passé sur le developpement de l'app en prenant en charge le frontend et le backend Laravel.",
     ability:
@@ -34,7 +77,17 @@ export const projects: Projects = [
   {
     name: 'Gestionaire de base de données',
     company: 'Rougy Horticulture',
-    technology: ['ReactJS', 'SCSS', 'NestJS', 'TypeScript', 'Docker', 'Nginx', 'MySQL'],
+    image: rougyLogo,
+    technologies: [
+      { name: 'ReactJS', image: reactJsLogo },
+      { name: 'SCSS', image: scssLogo },
+      { name: 'NestJS', image: nestjsLogo },
+      { name: 'TypeScript', image: typescriptLogo },
+      { name: 'Docker', image: dockerLogo },
+      { name: 'Nginx', image: nginxLogo },
+      { name: 'MySQL', image: mysqlLogo },
+      { name: 'GitHub', image: githubLogo },
+    ],
     productDesciption:
       "L'application permet à l'exploitation de regrouper et gérer l'ensemble de leur produits. Elle offre la possibilité de gérer les plantes en fonction de certaines caractéristiques et de gérer les prix de celle-ci",
     roleDescription:
@@ -45,7 +98,12 @@ export const projects: Projects = [
   {
     name: "Application mobile d'encaissement",
     company: 'Rougy Horticulture',
-    technology: ['React Native', 'Expo'],
+    image: rougyLogo,
+    technologies: [
+      { name: 'React Native', image: reactnativeLogo },
+      { name: 'Expo', image: expoLogo },
+      { name: 'GitHub', image: githubLogo },
+    ],
     productDesciption:
       "Application mobile qui permet de réaliser l'encaissement plus facilement en récupérant les prix de l'exploitation",
     roleDescription:
@@ -53,10 +111,19 @@ export const projects: Projects = [
     ability: "J'ai pu appréhender le developpement d'une application mobile avec une authentification",
   },
   {
-    name: 'Projet personnel',
-    company: '',
-    technology: ['Laravel', 'NodeJS', 'ReactJS', 'TypeScript', 'PHP', 'VueJS'],
-    productDesciption: 'petites applications web, bot discord lié à un google calendar, api, site vitrine',
+    name: 'Autre',
+    company: 'Projets personnels',
+    image: persoLogo,
+    technologies: [
+      { name: 'Laravel', image: laravelLogo },
+      { name: 'NodeJS', image: nodejsLogo },
+      { name: 'ReactJS', image: reactJsLogo },
+      { name: 'TypeScript', image: typescriptLogo },
+      { name: 'PHP', image: phpLogo },
+      { name: 'VueJS', image: vuejsLogo },
+    ],
+    productDesciption:
+      'Des petites applications web, bot discord lié à un google calendar, des api ou encore des sites vitrines',
     roleDescription:
       "J'ai pu réaliser de nombreux petits projets personnel qui m'ont permis d'appréhender un certain nombre de technologies et de me confronter à différentes problèmatiques",
     ability:
