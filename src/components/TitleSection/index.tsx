@@ -6,7 +6,7 @@ import Moon from './Moon';
 
 const TitleSection = forwardRef<HTMLDivElement, object>((_, ref) => {
   const [currentSub, setCurrentSub] = useState(0);
-  const subtitleArray = ['Développeur web junior', 'Etudiant', 'Passionné'];
+  const subtitleArray = ['Développeur web junior', 'Étudiant', 'Alternant', 'Passionné'];
   const maxValue = subtitleArray.length;
   const intervalInSeconds = 6;
   useEffect(() => {
