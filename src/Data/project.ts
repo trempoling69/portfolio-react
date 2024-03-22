@@ -89,7 +89,7 @@ export const projects: Projects = [
       { name: 'GitHub', image: githubLogo },
     ],
     productDesciption:
-      "L'application permet à l'exploitation de regrouper et gérer l'ensemble de leurs produits. Elle offre la possibilité de gérer les plantes en fonction de certaines caractéristiques et de gérer les prix de celle-ci.",
+      "L'application permet à l'exploitation de regrouper et gérer l'ensemble de leurs produits. Elle offre la possibilité de gérer les plantes en fonction de certaines caractéristiques et de gérer les prix de celle-ci. Elle permet également de générer des étiquettes produits directement en PDF.",
     roleDescription:
       "J'ai réalisé ce projet seul. J'ai pu prendre en main le projet en choisissant les technologies que je souhaitais utiliser et en réalisant le frontend en ReactJS et le backend en NodeJS avec le framework NestJS",
     ability:

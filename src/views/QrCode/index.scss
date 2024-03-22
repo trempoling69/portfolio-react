@@ -1,0 +1,82 @@
+@import '../../variables.scss';
+.container-qrCode-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15rem;
+  .qrCode-title_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    .qrCode-title_h1 {
+      text-align: center;
+      font-size: 4rem;
+    }
+    .qrCode-title_span {
+      text-align: center;
+      font-size: 2rem;
+      font-style: italic;
+    }
+  }
+  .qrCode-form_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    width: 80%;
+    .qrCode-form_label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 3rem;
+      gap: 2rem;
+      width: 100%;
+      .qrCode-form_input {
+        display: block;
+        width: 100%;
+        padding: 8px 16px;
+        line-height: 25px;
+        font-size: 2.5rem;
+        font-weight: 500;
+        font-family: inherit;
+        border-radius: 6px;
+        appearance: none;
+        -webkit-appearance: none;
+        color: $sombre;
+        border: 2px solid $middle;
+        background: $plusclair;
+        transition: border 0.3s ease;
+        &::placeholder {
+          color: $sombre;
+        }
+        &:focus {
+          outline: none;
+          border-color: red;
+        }
+      }
+    }
+    .qrCode-submit_btn {
+      font-size: 2.5rem;
+      border-radius: 8px;
+      padding: 2rem;
+      font-weight: bold;
+      color: $sombre;
+      background-color: $plusclair;
+    }
+  }
+  .qr-code_container {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    width: 40%;
+    @include media-max('desktop-up') {
+      width: 100%;
+    }
+    .qr-conde_info {
+      font-size: 1.5rem;
+    }
+  }
+}
