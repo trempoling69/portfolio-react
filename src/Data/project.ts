@@ -35,6 +35,7 @@ import vuejsLogo from './img/vuejs.svg';
 import persoLogo from './img/perso.png';
 import githubLogo from './img/github.svg';
 import gitlabLogo from './img/gitlab.svg';
+import redLogo from './img/redLogo.png';
 export const projects: Projects = [
   {
     name: 'Clique',
@@ -89,9 +90,9 @@ export const projects: Projects = [
       { name: 'GitHub', image: githubLogo },
     ],
     productDesciption:
-      "L'application permet à l'exploitation de regrouper et gérer l'ensemble de leurs produits. Elle offre la possibilité de gérer les plantes en fonction de certaines caractéristiques et de gérer les prix de celle-ci. Elle permet également de générer des étiquettes produits directement en PDF.",
+      "L'application permet à l'exploitation de regrouper et gérer l'ensemble de leurs produits. Elle offre la possibilité de gérer les plantes en fonction de certaines caractéristiques, de gérer des variantes de production et de gérer les prix de celle-ci. Elle permet également de générer des étiquettes produits en PDF.",
     roleDescription:
-      "J'ai réalisé ce projet seul. J'ai pu prendre en main le projet en choisissant les technologies que je souhaitais utiliser et en réalisant le frontend en ReactJS et le backend en NodeJS avec le framework NestJS",
+      "Chargé de la conception, de l'architecture, du choix technologique ainsi que du développement de l'application, j'ai dû penser et anticiper les problèmes ou potentielles features à venir afin de garder une application qui peut évoluer.",
     ability:
       "Ce projet m'a permis d'acquérir beaucoup d'expérience dans la conception complète d'une application. J'ai dû passer par l'écoute du besoin client, la rédaction d'un cahier des charges puis la réalisation de maquette et enfin le développement de l'application. J'ai également pu réaliser le déploiement sur un VPS avec docker et Nginx.",
   },
@@ -109,6 +110,23 @@ export const projects: Projects = [
     roleDescription:
       "J'ai réalisé l'application en utilisant l'API NestJS créée pour le projet précédent afin de leur permettre de modifier au besoin leur prix sur le gestionnaire de bases de données et de pouvoir les récupérer à jour sur l'application mobile. J'ai également mis en place un système de panier qui enregistre en base de données les notes des clients avec le total, le contenu et la date.",
     ability: "J'ai pu appréhender le développement d'une application mobile avec une authentification.",
+  },
+  {
+    name: 'MyRed',
+    company: 'RED Horticulture',
+    image: redLogo,
+    technologies: [
+      { name: 'ReactJS', image: reactJsLogo },
+      { name: 'TypeScript', image: typescriptLogo },
+      { name: 'Docker', image: dockerLogo },
+      { name: 'Tailwind Css', image: tailwindLogo },
+      { name: 'GitLab', image: gitlabLogo },
+    ],
+    productDesciption: "Outil de gestion de l'éclairage dans des serres horticoles.",
+    roleDescription:
+      "Actuellement en alternance en tant que développeur frontend ReactJS, je suis chargé du maintient et du développement de l'application frontend.",
+    ability:
+      "Cette expérience me permet d'approfondir mes connaissances en React et également le travail en équipe dans une entreprise.",
   },
   {
     name: 'Autre',

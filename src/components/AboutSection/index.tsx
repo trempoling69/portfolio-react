@@ -11,7 +11,7 @@ const AboutSection = forwardRef<HTMLElement, object>((_, ref) => {
           <div className="about-section_some">
             <h1>... Sur moi</h1>
             <p>
-              Étudiant de 21 ans en troisième année, en alternance, dans une école de développement web à Lyon, je
+              Étudiant de 22 ans en quatrième année, en alternance, dans une école de développement web à Lyon, je
               souhaite découvrir toutes les facettes de ce milieu qui me passionne particulièrement. J'ai acquis une
               expérience certaine grâce à mes études, mes expériences professionnelles et aux différents projets
               personnels que j'ai pu réaliser. J'ai travaillé sur une variété de projets, allant de sites vitrines
