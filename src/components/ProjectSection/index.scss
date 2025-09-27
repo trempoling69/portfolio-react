@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   overflow: hidden;
+  gap: 2rem;
   @media screen and (max-width: 1024px) {
     padding: 1rem;
   }
