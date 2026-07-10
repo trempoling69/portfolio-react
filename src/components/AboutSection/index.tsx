@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import './index.scss';
-import CV from '../../Data/Romain-Mourieras_CV.pdf';
+import CV from '../../Data/Romain_Mourieras_CV.pdf';
 import picture from '../../assets/pp_rm_recad.png';
 const AboutSection = forwardRef<HTMLElement, object>((_, ref) => {
   return (
@@ -9,22 +9,21 @@ const AboutSection = forwardRef<HTMLElement, object>((_, ref) => {
       <div className="about-section_content">
         <div className="about-section_text-container">
           <div className="about-section_some">
-            <h1>... Sur moi</h1>
+            <h1 style={{ textAlign: 'start' }}>... Sur moi</h1>
             <p>
-              Étudiant de 22 ans en quatrième année, en alternance, dans une école de développement web à Lyon, je
-              souhaite découvrir toutes les facettes de ce milieu qui me passionne particulièrement. J'ai acquis une
-              expérience certaine grâce à mes études, mes expériences professionnelles et aux différents projets
-              personnels que j'ai pu réaliser. J'ai travaillé sur une variété de projets, allant de sites vitrines
-              simples à des applications web plus complexes nécessitant une gestion de bases de données et une
-              authentification utilisateur. Passionné et avide de toujours en apprendre plus, je suis constamment à la
-              recherche de nouveaux projets et de nouvelles aventures pour apprendre et me perfectionner en tant que
-              développeur web. Si vous cherchez un développeur passionné et motivé pour votre prochain projet, n'hésitez
-              pas à me contacter. Je serai ravi de discuter de vos idées et de voir comment je peux vous aider à
-              atteindre vos objectifs.
+              Diplômé d'un Bac+5, je souhaite découvrir toutes les facettes de ce milieu qui me passionne
+              particulièrement. J'ai acquis une expérience certaine grâce à mes études, mes expériences professionnelles
+              et aux différents projets personnels que j'ai pu réaliser. J'ai travaillé sur une variété de projets,
+              allant de sites vitrines simples à des applications web plus complexes nécessitant une gestion de bases de
+              données et une authentification utilisateur. Passionné et avide de toujours en apprendre plus, je suis
+              constamment à la recherche de nouveaux projets et de nouvelles aventures pour apprendre et me
+              perfectionner en tant que développeur. Si vous cherchez un développeur passionné et motivé pour votre
+              prochain projet, n'hésitez pas à me contacter. Je serai ravi de discuter de vos idées et de voir comment
+              je peux vous aider à atteindre vos objectifs.
             </p>
           </div>
           <div className="about-section_personality">
-            <h1>... Sur ma personnalité</h1>
+            <h1 style={{ textAlign: 'start' }}>... Sur ma personnalité</h1>
             <p>
               Je suis une personne curieuse et déterminée qui aime aller au bout des choses et trouver des solutions
               créatives aux défis qui se posent à moi. En dehors de mon travail en tant que développeur, la photographie
